@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="timer" target="1.5" />
+      <module name="timer" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
