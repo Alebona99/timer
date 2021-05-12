@@ -50,7 +50,7 @@ public final class TimerUtils {
     public static double elapsedTime(){
         long total = finTime - initTime;
         long time = TimeUnit.NANOSECONDS.convert(total, TimeUnit.MILLISECONDS);
-        return (double)time/ 1_000_0000;
+        return (double)time;
     }
 
 }

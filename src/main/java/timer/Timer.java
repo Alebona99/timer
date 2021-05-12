@@ -51,7 +51,7 @@ public class Timer {
     public double elapsedTime(){
         long total = this.finTime - this.initTime;
         long time = TimeUnit.NANOSECONDS.convert(total, TimeUnit.MILLISECONDS);
-        return (double)time/ 1_000_0000;
+        return (double)time;
     }
 
 
