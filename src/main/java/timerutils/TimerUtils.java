@@ -1,27 +1,26 @@
-package timer;
+package timerutils;
 
 import java.util.concurrent.TimeUnit;
 
-public class Timer {
+/**
+ * Class Utility per Timer
+ */
+public final class TimerUtils {
+
 
     /**
-     * Attributi privati
+     * Varibili private
      * initTime è l'inizio del timer
      * finTime è la fine del timer
      */
-    private long initTime;
-    private long finTime;
-
-    /**
-     * Costruttore di default
-     */
-    public Timer(){ }
+    private static long initTime;
+    private static long finTime;
 
 
     /**
      * Metodo che fa partire il timer
      */
-    public void start(){
+    public static void start(){
         initTime = System.nanoTime();
 
     }
@@ -30,7 +29,7 @@ public class Timer {
     /**
      * Metodo che fa finire il timer
      */
-    public void end(){
+    public static void end(){
         finTime = System.nanoTime();
     }
 
@@ -38,7 +37,7 @@ public class Timer {
     /**
      * Metodo che resetta il timer
      */
-    public void reset(){
+    public static void reset(){
         initTime = System.nanoTime();
         finTime = 0;
     }
@@ -48,28 +47,10 @@ public class Timer {
      * Metodo per il calcolo del tempo trascorso in millisecondi
      * @return Il valore del tempo trascorso dalla partenza del timer alla sua fine
      */
-    public double elapsedTime(){
-        long total = this.finTime - this.initTime;
+    public static double elapsedTime(){
+        long total = finTime - initTime;
         long time = TimeUnit.NANOSECONDS.convert(total, TimeUnit.MILLISECONDS);
         return (double)time/ 1_000_0000;
     }
-
-
-    /**
-     * Getter per initTime
-     * @return Il suo valore
-     */
-    public long getInitTime() {
-        return initTime;
-    }
-
-    /**
-     * Getter per finTime
-     * @return IL suo valore
-     */
-    public long getFinTime() {
-        return finTime;
-    }
-
 
 }
